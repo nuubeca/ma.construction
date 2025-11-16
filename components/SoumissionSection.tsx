@@ -3,7 +3,7 @@ import ParallaxSection from './ParallaxSection'
 export default function SoumissionSection() {
   return (
     <ParallaxSection 
-      imageUrl="https://ma.construction/images/background2.jpg"
+      imageUrl="/images/background2.jpg"
       alt="Background"
       minHeight="300px"
     >

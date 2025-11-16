@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       {/* Hero Section with Parallax */}
       <ParallaxSection 
-        imageUrl="https://ma.construction/images/background4.jpg"
+        imageUrl="/images/background4.jpg"
         alt="Construction background"
         minHeight="500px"
       >
@@ -31,21 +31,21 @@ export default function Home() {
             <ServiceCard
               title="Construction Résidentiel"
               description="Nous vous proposons la conception de A à Z de votre maison, nous nous occupons de toutes les étapes de la construction. Faire affaire avec un professionnel de la construction vous avantagera grandement."
-              imageUrl="https://ma.construction/images/card1.jpg"
+              imageUrl="/images/card1.jpg"
               link="/services/construction"
             />
             
             <ServiceCard
               title="Construction Commercial"
               description="Que ce soit la gérance de vos projets, la conception sur mesure ou un projet clé en main notre expérience et notre expertise dans le domaine vous garantit un travail professionnel de qualité."
-              imageUrl="https://ma.construction/images/card2.jpg"
+              imageUrl="/images/card2.jpg"
               link="/services/construction"
             />
             
             <ServiceCard
               title="Rénovation"
               description="Que ce soit la gérance de vos projets, la conception sur mesure ou un projet clé en main notre expérience et notre expertise dans le domaine vous garantit un travail professionnel de qualité."
-              imageUrl="https://ma.construction/images/card3.jpg"
+              imageUrl="/images/card3.jpg"
               link="/services/renovation"
             />
           </div>
@@ -54,14 +54,14 @@ export default function Home() {
             <ServiceCard
               title="Excavation"
               description="Nous sommes disposé à effectuer vos travaux de mini-excavation, que ce soit pour vos drains, une tranchée dans le sol, le nivelage de votre terrain ou autres."
-              imageUrl="https://ma.construction/images/card4.jpg"
+              imageUrl="/images/card4.jpg"
               link="/services/excavation"
             />
             
             <ServiceCard
               title="Vrac"
               description="Pour tous vos projets extérieurs, nous avons ce qu&apos;il vous faut! Terre, sable, paillis, poussières de roche, ardoise, pierre nette, gallet de rivière, en vente à la verge!"
-              imageUrl="https://ma.construction/images/card5.jpg"
+              imageUrl="/images/card5.jpg"
               link="/services/materiaux-en-vrac"
               highlighted={true}
             />
@@ -71,7 +71,7 @@ export default function Home() {
 
       {/* Vrac Calculator CTA */}
       <ParallaxSection 
-        imageUrl="https://ma.construction/images/background3.jpg"
+        imageUrl="/images/background3.jpg"
         alt="Background"
         minHeight="300px"
       >
@@ -97,10 +97,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-lg shadow-2xl p-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-              <img src="https://ma.construction/images/logo-apcha.jpg" alt="APCHA" className="h-16 object-contain" />
-              <img src="https://ma.construction/images/logo-ccq.jpg" alt="CCQ" className="h-16 object-contain" />
-              <img src="https://ma.construction/images/logo-abritat.jpg" alt="Abritat" className="h-16 object-contain" />
-              <img src="https://ma.construction/images/logo-rbq.jpg" alt="RBQ" className="h-16 object-contain" />
+              <img src="/images/logo-apcha.jpg" alt="APCHA" className="h-16 object-contain" />
+              <img src="/images/logo-ccq.jpg" alt="CCQ" className="h-16 object-contain" />
+              <img src="/images/logo-abritat.jpg" alt="Abritat" className="h-16 object-contain" />
+              <img src="/images/logo-rbq.jpg" alt="RBQ" className="h-16 object-contain" />
             </div>
           </div>
         </div>

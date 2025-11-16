@@ -41,7 +41,7 @@ export default function MateriauxEnVracPage() {
     <main>
       {/* Hero Section */}
       <ParallaxSection 
-        imageUrl="https://ma.construction/images/background5.jpg"
+        imageUrl="/images/background5.jpg"
         alt="Vrac background"
         minHeight="250px"
       >

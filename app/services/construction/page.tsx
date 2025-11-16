@@ -4,17 +4,17 @@ import SoumissionSection from '@/components/SoumissionSection'
 
 export default function ConstructionPage() {
   const images = [
-    'https://ma.construction/images/construction-1.jpg',
-    'https://ma.construction/images/construction-2.jpg',
-    'https://ma.construction/images/construction-3.jpg',
-    'https://ma.construction/images/construction-4.jpg',
+    '/images/construction-1.jpg',
+    '/images/construction-2.jpg',
+    '/images/construction-3.jpg',
+    '/images/construction-4.jpg',
   ]
 
   return (
     <main>
       {/* Hero Section */}
       <ParallaxSection 
-        imageUrl="https://ma.construction/images/background1.jpg"
+        imageUrl="/images/background1.jpg"
         alt="Construction background"
         minHeight="250px"
       >

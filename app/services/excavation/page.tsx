@@ -4,17 +4,17 @@ import SoumissionSection from '@/components/SoumissionSection'
 
 export default function ExcavationPage() {
   const images = [
-    'https://ma.construction/images/excavation-1.jpg',
-    'https://ma.construction/images/excavation-2.jpg',
-    'https://ma.construction/images/excavation-3.jpg',
-    'https://ma.construction/images/excavation-4.jpg',
+    '/images/excavation-1.jpg',
+    '/images/excavation-2.jpg',
+    '/images/excavation-3.jpg',
+    '/images/excavation-4.jpg',
   ]
 
   return (
     <main>
       {/* Hero Section */}
       <ParallaxSection 
-        imageUrl="https://ma.construction/images/background4.jpg"
+        imageUrl="/images/background4.jpg"
         alt="Excavation background"
         minHeight="250px"
       >

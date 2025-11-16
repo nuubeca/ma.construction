@@ -63,7 +63,7 @@ export default function ContactPage() {
     <main>
       {/* Hero Section */}
       <ParallaxSection 
-        imageUrl="https://ma.construction/images/background5.jpg"
+        imageUrl="/images/background5.jpg"
         alt="Contact background"
         minHeight="250px"
       >

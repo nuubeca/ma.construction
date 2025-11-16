@@ -7,7 +7,7 @@ export default function BureauPage() {
     <main>
       {/* Hero Section */}
       <ParallaxSection 
-        imageUrl="https://ma.construction/images/background5.jpg"
+        imageUrl="/images/background5.jpg"
         alt="Bureau background"
         minHeight="250px"
       >
