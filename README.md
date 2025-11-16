@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Construction Michael Aubut
 
-## Getting Started
+Site web moderne et responsive pour Construction Michael Aubut, recréé avec Next.js 14 et Tailwind CSS.
 
-First, run the development server:
+## 🚀 Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 14** - Framework React avec App Router
+- **TypeScript** - Typage statique
+- **Tailwind CSS** - Framework CSS utility-first
+- **React** - Bibliothèque UI
+
+## 📋 Fonctionnalités
+
+- ✅ Design moderne et responsive
+- ✅ Navigation mobile avec menu hamburger
+- ✅ Effet parallax sur les images de fond
+- ✅ Pages de services détaillées:
+  - Construction résidentielle et commerciale
+  - Rénovation
+  - Excavation
+  - Matériaux en vrac avec calculateur
+- ✅ Formulaire de contact
+- ✅ Page bureau avec informations de contact
+- ✅ Animations fluides
+- ✅ Optimisation des performances
+- ✅ Accessibilité améliorée
+
+## 🎨 Design
+
+Le site utilise une palette de couleurs professionnelle:
+- **Gris foncé** (#424242) - Fond principal
+- **Amber** (#FFC107) - Couleur d'accent
+- **Blanc** - Contenu et cartes
+- **Gris 900** (#1F2937) - En-tête et pied de page
+
+## 🏗️ Structure du projet
+
+```
+ma.construction/
+├── app/
+│   ├── layout.tsx              # Layout principal avec header et footer
+│   ├── page.tsx                # Page d'accueil
+│   ├── globals.css             # Styles globaux
+│   ├── contact/
+│   │   └── page.tsx            # Page de contact
+│   ├── bureau/
+│   │   └── page.tsx            # Page bureau
+│   └── services/
+│       ├── construction/
+│       │   └── page.tsx        # Page construction
+│       ├── renovation/
+│       │   └── page.tsx        # Page rénovation
+│       ├── excavation/
+│       │   └── page.tsx        # Page excavation
+│       └── materiaux-en-vrac/
+│           └── page.tsx        # Page vrac avec calculateur
+├── components/
+│   ├── ContactSection.tsx      # Section contact réutilisable
+│   ├── MobileMenu.tsx          # Menu mobile
+│   ├── ParallaxSection.tsx     # Section avec effet parallax
+│   └── ServiceCard.tsx         # Carte de service
+└── public/
+    └── images/                 # Images du site
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Installation et démarrage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Installation des dépendances
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Démarrage en mode développement
+npm run dev
 
-## Learn More
+# Build pour la production
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# Démarrage en production
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📱 Pages disponibles
 
-## Deploy on Vercel
+- `/` - Page d'accueil avec présentation des services
+- `/services/construction` - Construction résidentielle et commerciale
+- `/services/renovation` - Services de rénovation
+- `/services/excavation` - Services d'excavation
+- `/services/materiaux-en-vrac` - Matériaux en vrac et calculateur
+- `/contact` - Formulaire de contact
+- `/bureau` - Informations sur le bureau
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 Fonctionnalités clés
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Calculateur de vrac
+La page des matériaux en vrac inclut un calculateur interactif qui permet aux clients de:
+- Entrer les dimensions (largeur, longueur, profondeur)
+- Calculer automatiquement les verges cubiques nécessaires
+- Inclut un surplus de 10% automatiquement
+
+### Effet Parallax
+Les sections avec images de fond utilisent un effet parallax pour une expérience visuelle moderne et engageante.
+
+### Menu mobile
+Navigation intuitive sur mobile avec menu hamburger animé et overlay.
+
+## 🔧 Personnalisation
+
+Les couleurs principales peuvent être modifiées dans `tailwind.config.ts`:
+
+```typescript
+colors: {
+  'amber': {
+    400: '#ffc107',
+    500: '#ffb300',
+  }
+}
+```
+
+## 📞 Contact
+
+- **Téléphone**: 1-819-560-1882
+- **Adresse**: 1100 rue Galt Est, Sherbrooke (Québec) J1G 1Y5
+
+## 📄 Licence
+
+© 2024 Construction Michael Aubut. Tous droits réservés.
