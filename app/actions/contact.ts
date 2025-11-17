@@ -33,7 +33,7 @@ export async function sendContactEmail(formData: ContactFormData) {
 
     const { data, error } = await resend.emails.send({
       from: 'info@constructionmichaelaubut.com',
-      to: 'info@pelti.com',
+      to: 'info@pelti.co',
       replyTo: formData.email,
       subject: `Nouveau message du site - ${formData.firstName} ${formData.lastName}`,
       html: `

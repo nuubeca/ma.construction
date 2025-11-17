@@ -18,13 +18,26 @@ export default function ParallaxSection({
       className="relative overflow-hidden bg-gray-900"
       style={{ minHeight }}
     >
+      {/* Desktop: Parallax effect with fixed attachment */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 hidden md:block"
         style={{ 
           backgroundImage: `url(${imageUrl})`,
-          backgroundAttachment: 'fixed'
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover'
         }}
       />
+      
+      {/* Mobile: Normal background without parallax for better performance */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 md:hidden"
+        style={{ 
+          backgroundImage: `url(${imageUrl})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center'
+        }}
+      />
+      
       <div className="relative z-10">
         {children}
       </div>

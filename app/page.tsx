@@ -12,12 +12,12 @@ export default function Home() {
         alt="Construction background"
         minHeight="500px"
       >
-        <div className="container mx-auto px-4 py-32">
+        <div className="container mx-auto px-4 py-24 md:py-32">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg font-anton">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 text-white drop-shadow-lg font-anton">
               Construction Michael Aubut
             </h1>
-            <p className="text-xl md:text-2xl text-white drop-shadow-md max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-white drop-shadow-md max-w-3xl mx-auto px-4">
               Qualité et expertise pour la satisfaction de nos clients depuis 10 ans
             </p>
           </div>
