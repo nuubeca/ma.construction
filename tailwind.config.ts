@@ -28,11 +28,11 @@ const config: Config = {
           900: "#161412",
         },
         safety: {
-          DEFAULT: "#F97316",
-          50: "#FFF4ED",
-          400: "#FB923C",
-          500: "#F97316",
-          600: "#EA580C",
+          DEFAULT: "#FDB01A",
+          50: "#FFF8E5",
+          400: "#FDC34E",
+          500: "#FDB01A",
+          600: "#E69A0F",
         },
       },
       fontFamily: {
