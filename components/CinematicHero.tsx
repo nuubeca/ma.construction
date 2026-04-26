@@ -35,7 +35,17 @@ export default function CinematicHero({ videoSrc, posterSrc, alt }: CinematicHer
         style={prefersReduced ? undefined : { y: mediaY, scale: mediaScale }}
         className="absolute inset-0"
       >
-        {videoSrc ? (
+        {/* Mobile: image only (autoplay unreliable, native play button collides with title) */}
+        <Image
+          src={posterSrc}
+          alt={alt}
+          fill
+          priority
+          sizes="100vw"
+          className={`object-cover ${videoSrc ? 'md:hidden' : ''}`}
+        />
+        {/* Desktop: looping muted video */}
+        {videoSrc && (
           <video
             src={videoSrc}
             poster={posterSrc}
@@ -43,16 +53,9 @@ export default function CinematicHero({ videoSrc, posterSrc, alt }: CinematicHer
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        ) : (
-          <Image
-            src={posterSrc}
-            alt={alt}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
+            preload="metadata"
+            aria-hidden="true"
+            className="hidden md:block absolute inset-0 w-full h-full object-cover"
           />
         )}
       </motion.div>
