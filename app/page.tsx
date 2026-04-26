@@ -1,116 +1,184 @@
-import ContactSection from '@/components/ContactSection'
-import ParallaxSection from '@/components/ParallaxSection'
+import CinematicHero from '@/components/CinematicHero'
+import ContactBand from '@/components/ContactBand'
+import Marquee from '@/components/Marquee'
+import PartnersBand from '@/components/PartnersBand'
+import Reveal from '@/components/motion/Reveal'
+import RevealText from '@/components/motion/RevealText'
+import SectionLabel from '@/components/SectionLabel'
 import ServiceCard from '@/components/ServiceCard'
-import SoumissionSection from '@/components/SoumissionSection'
+import SoumissionBand from '@/components/SoumissionBand'
+import StatsBand from '@/components/StatsBand'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function Home() {
   return (
-    <main>
-      {/* Hero Section with Parallax */}
-      <ParallaxSection 
-        imageUrl="/images/background4.jpg"
-        alt="Construction background"
-        minHeight="500px"
-      >
-        <div className="container mx-auto px-4 py-24 md:py-32">
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 text-white drop-shadow-lg font-anton">
-              Construction Michael Aubut
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white drop-shadow-md max-w-3xl mx-auto px-4">
-              Qualité et expertise pour la satisfaction de nos clients depuis 10 ans
-            </p>
-          </div>
-        </div>
-      </ParallaxSection>
+    <>
+      <CinematicHero
+        videoSrc="/media/hero.mp4"
+        posterSrc="/media/scale-aerial.jpg"
+        alt="Chantier Construction Michael Aubut, vue aérienne"
+      />
 
-      {/* Services Section */}
-      <section className="py-16 bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            <ServiceCard
-              title="Construction Résidentiel"
-              description="Nous vous proposons la conception de A à Z de votre maison, nous nous occupons de toutes les étapes de la construction. Faire affaire avec un professionnel de la construction vous avantagera grandement."
-              imageUrl="/images/card1.jpg"
-              link="/services/construction"
-            />
-            
-            <ServiceCard
-              title="Construction Commercial"
-              description="Que ce soit la gérance de vos projets, la conception sur mesure ou un projet clé en main notre expérience et notre expertise dans le domaine vous garantit un travail professionnel de qualité."
-              imageUrl="/images/card2.jpg"
-              link="/services/construction"
-            />
-            
-            <ServiceCard
-              title="Rénovation"
-              description="Que ce soit la gérance de vos projets, la conception sur mesure ou un projet clé en main notre expérience et notre expertise dans le domaine vous garantit un travail professionnel de qualité."
-              imageUrl="/images/card3.jpg"
-              link="/services/renovation"
-            />
+      {/* Marquee transition band */}
+      <section className="bg-ink py-10 border-y border-concrete-50/10 overflow-hidden">
+        <Marquee
+          items={[
+            'Construction',
+            'Rénovation',
+            'Excavation',
+            'Vrac',
+            'Sherbrooke',
+          ]}
+          speed="slow"
+          className="text-concrete-50"
+        />
+      </section>
+
+      {/* Manifesto / Intro */}
+      <section className="relative bg-ink text-concrete-50 px-5 md:px-10 py-24 md:py-40">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+          <div className="md:col-span-4">
+            <SectionLabel number="01" label="Manifesto" />
+            <Reveal delay={0.1} className="mt-10">
+              <p className="text-concrete-300 text-sm uppercase tracking-[0.2em] leading-relaxed">
+                Sherbrooke · Estrie
+              </p>
+              <p className="mt-3 text-concrete-200 leading-relaxed max-w-sm">
+                Une équipe locale, présente sur le chantier — pas seulement à
+                l&apos;administration.
+              </p>
+            </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard
-              title="Excavation"
-              description="Nous sommes disposé à effectuer vos travaux de mini-excavation, que ce soit pour vos drains, une tranchée dans le sol, le nivelage de votre terrain ou autres."
-              imageUrl="/images/card4.jpg"
-              link="/services/excavation"
+          <div className="md:col-span-8">
+            <RevealText
+              text="Bâtir solide. Livrer net. Respecter les délais."
+              as="h2"
+              className="font-anton uppercase text-massive md:text-colossal tracking-tightest leading-[0.9]"
+              stagger={0.05}
             />
-            
-            <ServiceCard
-              title="Vrac"
-              description="Pour tous vos projets extérieurs, nous avons ce qu&apos;il vous faut! Terre, sable, paillis, poussières de roche, ardoise, pierre nette, gallet de rivière, en vente à la verge!"
-              imageUrl="/images/card5.jpg"
-              link="/services/materiaux-en-vrac"
-              highlighted={true}
-            />
+            <Reveal delay={0.4} className="mt-10 max-w-2xl">
+              <p className="text-lg text-concrete-200 leading-relaxed">
+                Nous vous proposons la conception de A à Z de votre maison.
+                Notre équipe s&apos;occupe de toutes les étapes de la
+                construction. Faire affaire avec un professionnel vous
+                avantagera grandement.
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Vrac Calculator CTA */}
-      <ParallaxSection 
-        imageUrl="/images/background3.jpg"
-        alt="Background"
-        minHeight="300px"
-      >
-        <div className="container mx-auto px-4 py-24">
-          <div className="text-center">
-            <a 
-              href="/services/materiaux-en-vrac"
-              className="inline-flex items-center justify-center w-20 h-20 bg-amber-400 hover:bg-amber-500 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 animate-pulse hover:animate-none"
-            >
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
-            </a>
-            <p className="text-white text-xl mt-4 font-semibold drop-shadow-lg">
-              Calculateur de vrac
-            </p>
+      {/* Stats */}
+      <StatsBand />
+
+      {/* Services Grid */}
+      <section className="relative bg-ink text-concrete-50 px-5 md:px-10 py-24 md:py-40">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 md:mb-24">
+          <div className="md:col-span-4">
+            <SectionLabel number="02" label="Services" />
+          </div>
+          <div className="md:col-span-8">
+            <RevealText
+              text="Quatre disciplines. Une seule équipe."
+              as="h2"
+              className="font-anton uppercase text-massive md:text-colossal tracking-tightest leading-[0.9]"
+            />
           </div>
         </div>
-      </ParallaxSection>
 
-      {/* Partner Logos */}
-      <section className="bg-gray-800 py-12">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-2xl p-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-              <img src="/images/logo-apcha.jpg" alt="APCHA" className="h-16 object-contain" />
-              <img src="/images/logo-ccq.jpg" alt="CCQ" className="h-16 object-contain" />
-              <img src="/images/logo-abritat.jpg" alt="Abritat" className="h-16 object-contain" />
-              <img src="/images/logo-rbq.jpg" alt="RBQ" className="h-16 object-contain" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <ServiceCard
+            index="01 / 05"
+            title="Construction Résidentielle"
+            description="Nous vous proposons la conception de A à Z de votre maison, nous nous occupons de toutes les étapes de la construction. Faire affaire avec un professionnel de la construction vous avantagera grandement."
+            imageUrl="/images/card1.jpg"
+            link="/services/construction"
+          />
+          <ServiceCard
+            index="02 / 05"
+            title="Construction Commerciale"
+            description="Que ce soit la gérance de vos projets, la conception sur mesure ou un projet clé en main notre expérience et notre expertise dans le domaine vous garantit un travail professionnel de qualité."
+            imageUrl="/images/card2.jpg"
+            link="/services/construction"
+          />
+          <ServiceCard
+            index="03 / 05"
+            title="Rénovation"
+            description="Que ce soit la gérance de vos projets, la conception sur mesure ou un projet clé en main notre expérience et notre expertise dans le domaine vous garantit un travail professionnel de qualité."
+            imageUrl="/images/card3.jpg"
+            link="/services/renovation"
+          />
+          <ServiceCard
+            index="04 / 05"
+            title="Excavation"
+            description="Nous sommes disposé à effectuer vos travaux de mini-excavation, que ce soit pour vos drains, une tranchée dans le sol, le nivelage de votre terrain ou autres."
+            imageUrl="/images/card4.jpg"
+            link="/services/excavation"
+          />
+          <ServiceCard
+            index="05 / 05"
+            title="Vrac"
+            description="Pour tous vos projets extérieurs, nous avons ce qu'il vous faut! Terre, sable, paillis, poussières de roche, ardoise, pierre nette, gallet de rivière, en vente à la verge!"
+            imageUrl="/images/card5.jpg"
+            link="/services/materiaux-en-vrac"
+            highlighted
+          />
+        </div>
+      </section>
+
+      {/* Editorial split */}
+      <section className="relative bg-concrete-50 text-ink px-5 md:px-10 py-24 md:py-40 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
+          <Reveal direction="left" className="md:col-span-6 relative aspect-[4/5] md:aspect-[3/4]">
+            <Image
+              src="/media/gesture-pour.jpg"
+              alt="Le geste : coulée de béton sur fondation"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div className="absolute bottom-0 inset-x-0 px-6 py-5 bg-gradient-to-t from-ink/80 to-transparent text-concrete-50">
+              <p className="eyebrow">Le geste</p>
             </div>
+          </Reveal>
+
+          <div className="md:col-span-5 md:col-start-8">
+            <SectionLabel number="—" label="Métier" light />
+            <h2 className="mt-10 font-anton uppercase text-massive tracking-tightest leading-[0.9]">
+              Du béton coulé <br />
+              au bardeau posé.
+            </h2>
+            <p className="mt-8 text-concrete-700 leading-relaxed text-lg max-w-md">
+              Construction résidentielle, immeubles à revenus, projets clé en
+              main ou auto-construction&nbsp;: nous nous adaptons à votre
+              budget, vos goûts et vos objectifs.
+            </p>
+            <Link
+              href="/services/construction"
+              className="cursor-pointer mt-10 inline-flex items-center gap-3 group"
+            >
+              <span className="font-anton uppercase text-2xl tracking-tight">
+                Voir les services
+              </span>
+              <span className="w-12 h-12 border border-ink flex items-center justify-center group-hover:bg-safety group-hover:border-safety transition-colors">
+                <ArrowUpRight className="w-5 h-5" strokeWidth={1.5} />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Soumission Section */}
-      <SoumissionSection />
+      {/* Partners */}
+      <PartnersBand />
 
-      {/* Contact Section */}
-      <ContactSection />
-    </main>
+      {/* Soumission CTA */}
+      <SoumissionBand />
+
+      {/* Contact */}
+      <ContactBand />
+    </>
   )
 }

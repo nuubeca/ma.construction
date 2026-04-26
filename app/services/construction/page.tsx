@@ -1,75 +1,100 @@
-import ParallaxSection from '@/components/ParallaxSection'
-import ContactSection from '@/components/ContactSection'
-import SoumissionSection from '@/components/SoumissionSection'
+import ContactBand from '@/components/ContactBand'
+import ImageGrid from '@/components/ImageGrid'
+import PageIntro from '@/components/PageIntro'
+import Reveal from '@/components/motion/Reveal'
+import RevealText from '@/components/motion/RevealText'
+import SectionLabel from '@/components/SectionLabel'
+import SoumissionBand from '@/components/SoumissionBand'
 
 export default function ConstructionPage() {
   const images = [
-    '/images/construction-1.jpg',
-    '/images/construction-2.jpg',
-    '/images/construction-3.jpg',
-    '/images/construction-4.jpg',
+    { src: '/images/construction-1.jpg', alt: 'Chantier construction' },
+    { src: '/images/construction-2.jpg', alt: 'Charpente résidentielle' },
+    { src: '/images/construction-3.jpg', alt: 'Construction commerciale' },
+    { src: '/images/construction-4.jpg', alt: 'Finition extérieure' },
   ]
 
   return (
-    <main>
-      {/* Hero Section */}
-      <ParallaxSection 
-        imageUrl="/images/background1.jpg"
-        alt="Construction background"
-        minHeight="250px"
-      >
-        <div className="py-16" />
-      </ParallaxSection>
+    <>
+      <PageIntro
+        eyebrow="Service · 01"
+        title="Construction"
+        imageSrc="/media/scale-building.jpg"
+        alt="Chantier de construction massif"
+        caption="Résidentiel et commercial — projets clé en main, gérance ou auto-construction."
+      />
 
-      {/* Content Section */}
-      <section className="bg-gray-800 py-16">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-2xl p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Text Content */}
-              <div className="text-gray-800 space-y-6">
-                <div>
-                  <h2 className="text-3xl font-bold mb-4 text-gray-900">Résidentiel</h2>
-                  <p className="text-lg leading-relaxed">
-                    Pour un projet clé en main, que ce soit pour la construction de votre demeure ou de votre immeuble à revenu, notre équipe saura diriger chacune des étapes de la construction. Nous serons là pour vous conseiller dans la conception des plans, le choix des matériaux, l&apos;aménagement intérieur, ainsi que la finition.
-                  </p>
-                </div>
-                
-                <p className="text-lg leading-relaxed">
-                  Si toutefois vous désirez faire appel à notre équipe pour effectuer une ou plusieurs étapes dans votre projet d&apos;auto-construction, nous saurons nous adapter selon vos besoins. Nous sommes à l&apos;écoute des besoins de nos clients et notre expérience dans le domaine nous permettra de vous conseiller en fonction de vos goûts, de vos objectifs et de votre budget!
-                </p>
-                
-                <div>
-                  <h2 className="text-3xl font-bold mb-4 text-gray-900">Commercial</h2>
-                  <p className="text-lg leading-relaxed">
-                    La construction d&apos;un bâtiment commercial est un projet d&apos;envergure demandant une certaine expertise et un certain savoir-faire. Notre équipe est à votre disposition afin de concrétiser votre projet!
-                  </p>
-                </div>
-              </div>
+      <section className="bg-ink text-concrete-50 px-5 md:px-10 py-24 md:py-40">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+          <div className="md:col-span-5">
+            <SectionLabel number="—" label="Résidentiel" />
+            <RevealText
+              text="Résidentiel"
+              as="h2"
+              className="mt-8 font-anton uppercase text-colossal tracking-tightest leading-[0.85]"
+            />
+          </div>
 
-              {/* Images Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                {images.map((img, index) => (
-                  <div key={index} className="rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <img 
-                      src={img} 
-                      alt={`Construction ${index + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="md:col-span-7 space-y-8 text-concrete-200 leading-relaxed text-lg">
+            <Reveal delay={0.1}>
+              <p>
+                Pour un projet clé en main, que ce soit pour la construction de
+                votre demeure ou de votre immeuble à revenu, notre équipe saura
+                diriger chacune des étapes de la construction. Nous serons là
+                pour vous conseiller dans la conception des plans, le choix
+                des matériaux, l&apos;aménagement intérieur, ainsi que la
+                finition.
+              </p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p>
+                Si toutefois vous désirez faire appel à notre équipe pour
+                effectuer une ou plusieurs étapes dans votre projet
+                d&apos;auto-construction, nous saurons nous adapter selon vos
+                besoins. Nous sommes à l&apos;écoute des besoins de nos clients
+                et notre expérience dans le domaine nous permettra de vous
+                conseiller en fonction de vos goûts, de vos objectifs et de
+                votre budget!
+              </p>
+            </Reveal>
+          </div>
+        </div>
+
+        <Reveal className="my-20 md:my-28 ticker-divider text-concrete-50/40" />
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+          <div className="md:col-span-5">
+            <SectionLabel number="—" label="Commercial" />
+            <RevealText
+              text="Commercial"
+              as="h2"
+              className="mt-8 font-anton uppercase text-colossal tracking-tightest leading-[0.85]"
+            />
+          </div>
+          <div className="md:col-span-7 text-concrete-200 leading-relaxed text-lg">
+            <Reveal delay={0.1}>
+              <p>
+                La construction d&apos;un bâtiment commercial est un projet
+                d&apos;envergure demandant une certaine expertise et un certain
+                savoir-faire. Notre équipe est à votre disposition afin de
+                concrétiser votre projet!
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Soumission Section */}
-      <SoumissionSection />
+      <section className="bg-concrete-50 px-5 md:px-10 py-24 md:py-32">
+        <div className="flex items-center gap-4 mb-10">
+          <span className="eyebrow font-mono text-safety">—</span>
+          <span className="block w-10 h-px bg-ink/30" />
+          <span className="eyebrow text-concrete-700">Galerie</span>
+        </div>
+        <ImageGrid images={images} />
+      </section>
 
-      {/* Contact Section */}
-      <ContactSection />
-    </main>
+      <SoumissionBand />
+      <ContactBand />
+    </>
   )
 }
-

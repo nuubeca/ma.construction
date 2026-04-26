@@ -1,122 +1,125 @@
-import ParallaxSection from '@/components/ParallaxSection'
-import ContactSection from '@/components/ContactSection'
-import SoumissionSection from '@/components/SoumissionSection'
+import ContactBand from '@/components/ContactBand'
+import ImageGrid from '@/components/ImageGrid'
+import PageIntro from '@/components/PageIntro'
+import Reveal from '@/components/motion/Reveal'
+import RevealText from '@/components/motion/RevealText'
+import SectionLabel from '@/components/SectionLabel'
+import SoumissionBand from '@/components/SoumissionBand'
+
+const sections = [
+  {
+    title: 'Revêtement extérieur',
+    body: "Pour le revêtement extérieur d'une propriété, vous avez l'embarras du choix! Mais encore faut-il faire les bons choix, parmi tous les produits qui s'offrent à vous. Connaitre les avantages et inconvénient de chaque type de matériaux vous permettra de faire un choix éclairé. Tant l'aspect esthétique, que la qualité des matériaux sont à considérer.",
+  },
+  {
+    title: 'Réfection de la toiture',
+    body: "Il existe plusieurs types de revêtement de toiture, tel que le bardeau d'asphalte, la toiture métallique avec ou sans vis apparentes, la toiture d'ardoise, etc. Nous saurons vous expliquer les forces et les faiblesses et chacun.",
+  },
+  {
+    title: 'Balcons',
+    body: "Que ce soit pour un balcon en bois (épinette traité ou cèdre teint) ou en fibre de verre, pour des rampes en bois ou en aluminium, nous saurons vous renseigner afin de vous aider à prendre la meilleure décision, avant d'effectuer la réalisation des travaux.",
+  },
+  {
+    title: 'Garage / remise',
+    body: "Notre équipe peut construire votre garage, à partir de l'excavation jusqu'à l'étape que vous souhaitez, tout en vous conseillant dans les choix de matériaux.",
+  },
+  {
+    title: 'Agrandissement',
+    body: "Lors de l'agrandissement d'une propriété, nous pouvons soit conserver l'apparence d'origine de la maison, en préservant l'homogénéité du quartier ou soit changer complètement l'apparence de celle-ci afin de lui redonner un nouveau look. L'agrandissement d'une résidence apporte certainement une plus-value à celle-ci. Nous saurons vous guider dans votre projet, quel que soit l'ampleur des travaux.",
+  },
+  {
+    title: 'Réaménagement / finition intérieur',
+    body: "Que vous souhaitiez rénover votre salle de bain ou votre cuisine, modifier les divisions existantes, faire la finition de votre sous-sol, déplacer une cage d'escalier mal positionnée, remplacer votre revêtement de plancher, ou tout autre type de travaux, nous équipe est à votre disposition pour réaliser vos objectifs!",
+  },
+  {
+    title: 'Remplacement / ajout de portes et fenêtres',
+    body: "Effectuer des choix éclairés en matière de portes et fenêtres peut vous permettre de gagner en confort et en consommation énergétique. Nous effectuons toutes les étapes lors de l'ajout ou du remplacement de portes et fenêtres, soit l'installation, l'isolation, le calfeutrage, ainsi que la pose des moulures. De par son expertise, notre équipe saura vous recommander les meilleurs produits pour votre demeure.",
+  },
+  {
+    title: 'Et plusieurs autres…',
+    body: 'Confiez-nous votre projet.',
+  },
+]
 
 export default function RenovationPage() {
   const images = [
-    '/images/renovation-1.jpg',
-    '/images/renovation-2.jpg',
-    '/images/renovation-3.jpg',
-    '/images/renovation-4.jpg',
+    { src: '/images/renovation-1.jpg', alt: 'Rénovation extérieure' },
+    { src: '/images/renovation-2.jpg', alt: 'Rénovation intérieure' },
+    { src: '/images/renovation-3.jpg', alt: 'Détail rénovation' },
+    { src: '/images/renovation-4.jpg', alt: 'Finition rénovation' },
   ]
 
   return (
-    <main>
-      {/* Hero Section */}
-      <ParallaxSection 
-        imageUrl="/images/background4.jpg"
-        alt="Renovation background"
-        minHeight="250px"
-      >
-        <div className="py-16" />
-      </ParallaxSection>
+    <>
+      <PageIntro
+        eyebrow="Service · 02"
+        title="Rénovation"
+        imageSrc="/media/texture-wood.jpg"
+        alt="Charpente bois en rénovation"
+        caption="Notre équipe possède l'expertise pour réaliser tous vos projets — extérieur, toiture, intérieur."
+      />
 
-      {/* Content Section */}
-      <section className="bg-gray-800 py-16">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-2xl p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Text Content */}
-              <div className="text-gray-800 space-y-6">
-                <div>
-                  <h2 className="text-2xl font-bold mb-4 text-gray-900">
-                    Notre équipe possède l&apos;expertise pour réaliser tous vos projets!
-                  </h2>
-                  <p className="text-lg leading-relaxed">
-                    Nous serons présents pour vous conseiller dans les choix qui s&apos;offriront à vous, en considérant vos besoins, vos goûts, ainsi que votre budget. Voici quelques-uns des travaux que notre équipe est en mesure d&apos;effectuer :
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Revêtement extérieur</h3>
-                  <p className="leading-relaxed">
-                    Pour le revêtement extérieur d&apos;une propriété, vous avez l&apos;embarras du choix! Mais encore faut-il faire les bons choix, parmi tous les produits qui s&apos;offrent à vous. Connaitre les avantages et inconvénient de chaque type de matériaux vous permettra de faire un choix éclairé. Tant l&apos;aspect esthétique, que la qualité des matériaux sont à considérer.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Réfection de la toiture</h3>
-                  <p className="leading-relaxed">
-                    Il existe plusieurs types de revêtement de toiture, tel que le bardeau d&apos;asphalte, la toiture métallique avec ou sans vis apparentes, la toiture d&apos;ardoise, etc. Nous saurons vous expliquer les forces et les faiblesses et chacun.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Balcons</h3>
-                  <p className="leading-relaxed">
-                    Que ce soit pour un balcon en bois (épinette traité ou cèdre teint) ou en fibre de verre, pour des rampes en bois ou en aluminium, nous saurons vous renseigner afin de vous aider à prendre la meilleure décision, avant d&apos;effectuer la réalisation des travaux.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Garage/remise</h3>
-                  <p className="leading-relaxed">
-                    Notre équipe peut construire votre garage, à partir de l&apos;excavation jusqu&apos;à l&apos;étape que vous souhaitez, tout en vous conseillant dans les choix de matériaux.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Agrandissement</h3>
-                  <p className="leading-relaxed">
-                    Lors de l&apos;agrandissement d&apos;une propriété, nous pouvons soit conserver l&apos;apparence d&apos;origine de la maison, en préservant l&apos;homogénéité du quartier ou soit changer complètement l&apos;apparence de celle-ci afin de lui redonner un nouveau look. L&apos;agrandissement d&apos;une résidence apporte certainement une plus-value à celle-ci. Nous saurons vous guider dans votre projet, quel que soit l&apos;ampleur des travaux.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Réaménagement/finition intérieur</h3>
-                  <p className="leading-relaxed">
-                    Que vous souhaitiez rénover votre salle de bain ou votre cuisine, modifier les divisions existantes, faire la finition de votre sous-sol, déplacer une cage d&apos;escalier mal positionnée, remplacer votre revêtement de plancher, ou tout autre type de travaux, nous équipe est à votre disposition pour réaliser vos objectifs!
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Remplacement/ajout de portes et fenêtres</h3>
-                  <p className="leading-relaxed">
-                    Effectuer des choix éclairés en matière de portes et fenêtres peut vous permettre de gagner en confort et en consommation énergétique. Nous effectuons toutes les étapes lors de l&apos;ajout ou du remplacement de portes et fenêtres, soit l&apos;installation, l&apos;isolation, le calfeutrage, ainsi que la pose des moulures. De par son expertise, notre équipe saura vous recommander les meilleurs produits pour votre demeure.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Et plusieurs autres…</h3>
-                  <p className="leading-relaxed">
-                    Confiez-nous votre projet
-                  </p>
-                </div>
-              </div>
-
-              {/* Images Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                {images.map((img, index) => (
-                  <div key={index} className="rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <img 
-                      src={img} 
-                      alt={`Rénovation ${index + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+      <section className="bg-ink text-concrete-50 px-5 md:px-10 py-24 md:py-32">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+          <div className="md:col-span-4">
+            <SectionLabel number="—" label="Approche" />
+          </div>
+          <div className="md:col-span-8">
+            <RevealText
+              text="Notre équipe possède l'expertise pour réaliser tous vos projets!"
+              as="h2"
+              className="font-anton uppercase text-massive tracking-tightest leading-[0.95]"
+              stagger={0.04}
+            />
+            <Reveal delay={0.4}>
+              <p className="mt-10 text-lg text-concrete-200 leading-relaxed max-w-2xl">
+                Nous serons présents pour vous conseiller dans les choix qui
+                s&apos;offriront à vous, en considérant vos besoins, vos goûts,
+                ainsi que votre budget. Voici quelques-uns des travaux que
+                notre équipe est en mesure d&apos;effectuer&nbsp;:
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Soumission Section */}
-      <SoumissionSection />
+      <section className="bg-ink text-concrete-50 px-5 md:px-10 pb-24 md:pb-32">
+        <div className="border-t border-concrete-50/15">
+          {sections.map((s, i) => (
+            <Reveal
+              key={s.title}
+              delay={i * 0.05}
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-10 md:py-12 border-b border-concrete-50/15 group"
+            >
+              <div className="md:col-span-1 flex md:justify-start items-start">
+                <span className="eyebrow font-mono text-safety">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+              </div>
+              <div className="md:col-span-4">
+                <h3 className="font-anton uppercase text-3xl md:text-4xl tracking-tight leading-tight group-hover:text-safety transition-colors duration-300">
+                  {s.title}
+                </h3>
+              </div>
+              <div className="md:col-span-7">
+                <p className="text-concrete-200 leading-relaxed">{s.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
-      {/* Contact Section */}
-      <ContactSection />
-    </main>
+      <section className="bg-concrete-50 px-5 md:px-10 py-24 md:py-32">
+        <div className="flex items-center gap-4 mb-10">
+          <span className="eyebrow font-mono text-safety">—</span>
+          <span className="block w-10 h-px bg-ink/30" />
+          <span className="eyebrow text-concrete-700">Galerie</span>
+        </div>
+        <ImageGrid images={images} />
+      </section>
+
+      <SoumissionBand />
+      <ContactBand />
+    </>
   )
 }
-

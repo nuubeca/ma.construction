@@ -1,102 +1,131 @@
 'use client'
 
-import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-export default function MobileMenu() {
+interface NavItem {
+  href: string
+  label: string
+}
+
+interface MobileMenuProps {
+  items: NavItem[]
+}
+
+export default function MobileMenu({ items }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const menuItems = [
-    { href: '/services/construction', label: 'Construction' },
-    { href: '/services/renovation', label: 'Rénovation' },
-    { href: '/services/excavation', label: 'Excavation' },
-    { href: '/services/materiaux-en-vrac', label: 'Vrac' },
-    { href: '/contact', label: 'Contact' },
-    { href: '/bureau', label: 'Notre Bureau' },
-  ]
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
 
   return (
     <>
-      {/* Hamburger Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden text-amber-400 hover:text-amber-500 transition-colors z-50 relative"
-        aria-label="Menu"
+        onClick={() => setIsOpen(true)}
+        aria-label="Ouvrir le menu"
+        className="lg:hidden cursor-pointer w-11 h-11 flex flex-col items-center justify-center gap-1.5 text-concrete-50"
       >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          {isOpen ? (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          ) : (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          )}
-        </svg>
+        <span className="block w-6 h-px bg-current" />
+        <span className="block w-6 h-px bg-current" />
+        <span className="block w-4 h-px bg-current ml-auto" />
       </button>
 
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* Mobile Menu */}
-      <div
-        className={`fixed top-0 right-0 h-full w-64 bg-gray-900 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col h-full pt-20 pb-6 px-6">
-          <nav className="flex-1">
-            <ul className="space-y-4">
-              {menuItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block py-3 px-4 text-white hover:bg-amber-400 hover:text-gray-900 rounded-lg transition-all duration-200"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div className="border-t border-gray-700 pt-6">
-            <a
-              href="tel:18195601882"
-              className="flex items-center justify-center space-x-2 py-3 px-4 bg-amber-400 text-gray-900 rounded-lg hover:bg-amber-500 transition-colors"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[60] lg:hidden"
+          >
+            <motion.div
+              initial={{ y: '-100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '-100%' }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute inset-0 bg-ink"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-              <span className="font-semibold">1-819-560-1882</span>
-            </a>
-          </div>
-        </div>
-      </div>
+              <div className="grain absolute inset-0 pointer-events-none" />
+
+              <div className="relative h-full flex flex-col">
+                <div className="flex items-center justify-between px-5 py-4 border-b border-concrete-50/10">
+                  <span className="font-anton text-xl uppercase text-concrete-50">
+                    MA / Construction
+                  </span>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    aria-label="Fermer le menu"
+                    className="cursor-pointer w-11 h-11 flex items-center justify-center text-concrete-50"
+                  >
+                    <span className="relative w-6 h-6 block">
+                      <span className="absolute inset-x-0 top-1/2 h-px bg-current rotate-45" />
+                      <span className="absolute inset-x-0 top-1/2 h-px bg-current -rotate-45" />
+                    </span>
+                  </button>
+                </div>
+
+                <nav className="flex-1 flex flex-col justify-center px-5 md:px-10">
+                  <ul className="space-y-4 md:space-y-6">
+                    {items.map((item, i) => (
+                      <motion.li
+                        key={item.href}
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                          duration: 0.6,
+                          delay: 0.2 + i * 0.06,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
+                      >
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className="group flex items-baseline justify-between font-anton uppercase text-5xl md:text-7xl tracking-tighter text-concrete-50 hover:text-safety transition-colors cursor-pointer"
+                        >
+                          <span>{item.label}</span>
+                          <span className="text-xs tracking-[0.2em] text-concrete-500 font-sans normal-case">
+                            0{i + 1}
+                          </span>
+                        </Link>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </nav>
+
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="px-5 md:px-10 py-6 border-t border-concrete-50/10 flex items-center justify-between gap-4"
+                >
+                  <a
+                    href="tel:18195601882"
+                    className="cursor-pointer flex items-center gap-3 text-concrete-50 hover:text-safety transition-colors"
+                  >
+                    <span className="text-xs uppercase tracking-[0.2em] text-concrete-400">
+                      Appeler
+                    </span>
+                    <span className="font-anton text-lg">1·819·560·1882</span>
+                  </a>
+                  <span className="text-xs uppercase tracking-[0.2em] text-concrete-500">
+                    Sherbrooke · QC
+                  </span>
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
-
