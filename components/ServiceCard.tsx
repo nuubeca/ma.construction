@@ -59,7 +59,7 @@ export default function ServiceCard({
           </div>
 
           <div className="absolute bottom-0 inset-x-0 p-5 md:p-7">
-            <h3 className="font-anton uppercase text-3xl md:text-4xl lg:text-5xl tracking-tightest text-concrete-50 leading-[0.95]">
+            <h3 className="font-anton uppercase text-3xl md:text-4xl lg:text-5xl tracking-tightest text-concrete-50 leading-[1.05]">
               {title}
             </h3>
           </div>

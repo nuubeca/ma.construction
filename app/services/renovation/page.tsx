@@ -68,7 +68,7 @@ export default function RenovationPage() {
             <RevealText
               text="Notre équipe possède l'expertise pour réaliser tous vos projets!"
               as="h2"
-              className="font-anton uppercase text-massive tracking-tightest leading-[0.95]"
+              className="font-anton uppercase text-massive tracking-tightest leading-[1.05]"
               stagger={0.04}
             />
             <Reveal delay={0.4}>

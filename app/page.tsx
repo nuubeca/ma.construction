@@ -56,7 +56,7 @@ export default function Home() {
             <RevealText
               text="Bâtir solide. Livrer net. Respecter les délais."
               as="h2"
-              className="font-anton uppercase text-massive md:text-colossal tracking-tightest leading-[0.9]"
+              className="font-anton uppercase text-massive md:text-colossal tracking-tightest leading-[1]"
               stagger={0.05}
             />
             <Reveal delay={0.4} className="mt-10 max-w-2xl">
@@ -84,7 +84,7 @@ export default function Home() {
             <RevealText
               text="Quatre disciplines. Une seule équipe."
               as="h2"
-              className="font-anton uppercase text-massive md:text-colossal tracking-tightest leading-[0.9]"
+              className="font-anton uppercase text-massive md:text-colossal tracking-tightest leading-[1]"
             />
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function Home() {
 
           <div className="md:col-span-5 md:col-start-8">
             <SectionLabel number="—" label="Métier" light />
-            <h2 className="mt-10 font-anton uppercase text-massive tracking-tightest leading-[0.9]">
+            <h2 className="mt-10 font-anton uppercase text-massive tracking-tightest leading-[1]">
               Du béton coulé <br />
               au bardeau posé.
             </h2>

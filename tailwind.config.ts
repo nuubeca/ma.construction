@@ -45,9 +45,9 @@ const config: Config = {
         crush: "-0.04em",
       },
       fontSize: {
-        mega: ["clamp(4rem, 14vw, 18rem)", { lineHeight: "0.85", letterSpacing: "-0.05em" }],
-        colossal: ["clamp(3rem, 9vw, 9rem)", { lineHeight: "0.9", letterSpacing: "-0.04em" }],
-        massive: ["clamp(2.25rem, 6vw, 5rem)", { lineHeight: "0.95", letterSpacing: "-0.03em" }],
+        mega: ["clamp(4rem, 14vw, 18rem)", { lineHeight: "0.95", letterSpacing: "-0.05em" }],
+        colossal: ["clamp(3rem, 9vw, 9rem)", { lineHeight: "1", letterSpacing: "-0.04em" }],
+        massive: ["clamp(2.25rem, 6vw, 5rem)", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
         eyebrow: ["0.75rem", { lineHeight: "1", letterSpacing: "0.2em" }],
       },
       backgroundImage: {

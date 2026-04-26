@@ -26,7 +26,7 @@ export default function BureauPage() {
                   <MapPin className="w-5 h-5 text-safety mt-1 shrink-0" strokeWidth={1.5} />
                   <div>
                     <p className="eyebrow text-concrete-400 mb-3">Adresse</p>
-                    <p className="font-anton uppercase text-3xl md:text-4xl tracking-tight leading-[0.95] text-concrete-50">
+                    <p className="font-anton uppercase text-3xl md:text-4xl tracking-tight leading-[1.05] text-concrete-50">
                       1100 rue Galt Est<br />
                       Sherbrooke (QC)<br />
                       J1G 1Y5
@@ -42,7 +42,7 @@ export default function BureauPage() {
                     <p className="eyebrow text-concrete-400 mb-3">Téléphone</p>
                     <a
                       href="tel:18195601882"
-                      className="cursor-pointer font-anton uppercase text-3xl md:text-4xl tracking-tight leading-[0.95] text-concrete-50 hover:text-safety transition-colors"
+                      className="cursor-pointer font-anton uppercase text-3xl md:text-4xl tracking-tight leading-[1.05] text-concrete-50 hover:text-safety transition-colors"
                     >
                       1·819·560·1882
                     </a>

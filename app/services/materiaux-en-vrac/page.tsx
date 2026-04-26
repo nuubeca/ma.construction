@@ -54,7 +54,7 @@ export default function MateriauxEnVracPage() {
           {/* Left — Materials list */}
           <div className="lg:col-span-7">
             <SectionLabel number="—" label="Catalogue" />
-            <h2 className="mt-8 font-anton uppercase text-massive tracking-tightest leading-[0.95] max-w-2xl">
+            <h2 className="mt-8 font-anton uppercase text-massive tracking-tightest leading-[1.05] max-w-2xl">
               Pour tous vos projets extérieurs.
             </h2>
             <p className="mt-8 text-concrete-300 leading-relaxed max-w-xl text-lg">
@@ -121,7 +121,7 @@ export default function MateriauxEnVracPage() {
                 <span className="eyebrow text-concrete-700">Calculateur</span>
               </div>
 
-              <h3 className="font-anton uppercase text-4xl md:text-5xl tracking-tightest leading-[0.95] mt-6">
+              <h3 className="font-anton uppercase text-4xl md:text-5xl tracking-tightest leading-[1.05] mt-6">
                 Rectangle
               </h3>
 
@@ -180,7 +180,7 @@ export default function MateriauxEnVracPage() {
                   <p className="eyebrow text-concrete-700 mb-3">
                     Verges cubique
                   </p>
-                  <p className="font-anton uppercase text-mega leading-[0.85] text-ink tracking-tightest">
+                  <p className="font-anton uppercase text-mega leading-[0.95] text-ink tracking-tightest">
                     {total || '—'}
                   </p>
                 </div>

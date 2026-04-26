@@ -31,7 +31,7 @@ export default function SoumissionBand() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="font-anton uppercase text-colossal text-concrete-50 tracking-tightest leading-[0.9]"
+              className="font-anton uppercase text-colossal text-concrete-50 tracking-tightest leading-[1]"
             >
               Soumission<br />
               gratuite <span className="text-safety">en 48h</span>

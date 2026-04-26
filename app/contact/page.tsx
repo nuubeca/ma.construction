@@ -68,7 +68,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
           <div className="md:col-span-4">
             <SectionLabel number="—" label="Formulaire" />
-            <h2 className="mt-8 font-anton uppercase text-massive tracking-tightest leading-[0.9]">
+            <h2 className="mt-8 font-anton uppercase text-massive tracking-tightest leading-[1]">
               Parlez<br />
               <span className="text-safety">·</span>nous de<br />
               votre projet

@@ -31,7 +31,7 @@ export default function ExcavationPage() {
             <RevealText
               text="Précision sur le terrain"
               as="h2"
-              className="mt-8 font-anton uppercase text-massive tracking-tightest leading-[0.9]"
+              className="mt-8 font-anton uppercase text-massive tracking-tightest leading-[1]"
               stagger={0.05}
             />
           </div>

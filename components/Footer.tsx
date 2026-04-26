@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pt-10">
             <div className="md:col-span-5">
               <p className="eyebrow text-safety mb-4">Sherbrooke · Estrie · QC</p>
-              <h2 className="font-anton uppercase text-5xl md:text-7xl leading-[0.85] tracking-tightest">
+              <h2 className="font-anton uppercase text-5xl md:text-7xl leading-[0.95] tracking-tightest">
                 Construire <br /> avec rigueur <br /> depuis 10 ans
               </h2>
             </div>

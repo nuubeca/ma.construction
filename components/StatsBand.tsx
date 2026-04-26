@@ -28,7 +28,7 @@ export default function StatsBand() {
               }}
               className="border-l border-concrete-50/15 pl-6"
             >
-              <p className="font-anton uppercase text-7xl md:text-8xl tracking-tightest text-concrete-50 leading-[0.85]">
+              <p className="font-anton uppercase text-7xl md:text-8xl tracking-tightest text-concrete-50 leading-[0.95]">
                 {s.value}
                 <span className="text-safety">{s.suffix}</span>
               </p>

@@ -69,7 +69,7 @@ export default function PageIntro({
           </motion.span>
         </div>
 
-        <h1 className="font-anton uppercase text-colossal text-concrete-50 max-w-[14ch] tracking-tightest leading-[0.9]">
+        <h1 className="font-anton uppercase text-colossal text-concrete-50 max-w-[14ch] tracking-tightest leading-[1]">
           <span className="block overflow-hidden">
             <motion.span
               initial={{ y: '110%' }}

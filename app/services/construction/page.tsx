@@ -31,7 +31,7 @@ export default function ConstructionPage() {
             <RevealText
               text="Résidentiel"
               as="h2"
-              className="mt-8 font-anton uppercase text-colossal tracking-tightest leading-[0.85]"
+              className="mt-8 font-anton uppercase text-colossal tracking-tightest leading-[0.95]"
             />
           </div>
 
@@ -68,7 +68,7 @@ export default function ConstructionPage() {
             <RevealText
               text="Commercial"
               as="h2"
-              className="mt-8 font-anton uppercase text-colossal tracking-tightest leading-[0.85]"
+              className="mt-8 font-anton uppercase text-colossal tracking-tightest leading-[0.95]"
             />
           </div>
           <div className="md:col-span-7 text-concrete-200 leading-relaxed text-lg">
